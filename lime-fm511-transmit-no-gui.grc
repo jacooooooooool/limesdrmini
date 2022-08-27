@@ -1,0 +1,249 @@
+options:
+  parameters:
+    author: Lime
+    category: Custom
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: no_gui
+    hier_block_src_path: '.:'
+    id: send_info4_77
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: run
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: FM transmitter
+    window_size: (1000,500)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: analog_nbfm_tx_0_0
+  id: analog_nbfm_tx
+  parameters:
+    affinity: ''
+    alias: ''
+    audio_rate: '48000'
+    comment: ''
+    fh: '-1.0'
+    max_dev: 2e3
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    quad_rate: '480000'
+    tau: 75e-6
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [216, 132.0]
+    rotation: 0
+    state: enabled
+- name: blocks_wavfile_source_0_0
+  id: blocks_wavfile_source
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    file: /home/komunikat.wav
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nchan: '1'
+    repeat: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [16, 220]
+    rotation: 0
+    state: enabled
+- name: limesdr_sink_0
+  id: limesdr_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    allow_tcxo_dac: '0'
+    analog_bandw_ch0: '0'
+    analog_bandw_ch1: '0'
+    calibr_bandw_ch0: '0'
+    calibr_bandw_ch1: '0'
+    channel_mode: '0'
+    comment: ''
+    dacVal: '180'
+    digital_bandw_ch0: '0'
+    digital_bandw_ch1: '0'
+    filename: ''
+    gain_dB_ch0: '60'
+    gain_dB_ch1: '60'
+    length_tag_name: ''
+    nco_freq_ch0: '0'
+    nco_freq_ch1: '0'
+    oversample: '0'
+    pa_path_ch0: '255'
+    pa_path_ch1: '1'
+    rf_freq: 511e6
+    samp_rate: 1e6
+    serial: xxxxxxxx
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [696, 20]
+    rotation: 0
+    state: enabled
+- name: qtgui_sink_x_0
+  id: qtgui_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    bw: 446.09375e6
+    comment: ''
+    fc: '0'
+    fftsize: '1024'
+    gui_hint: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    plotconst: 'True'
+    plotfreq: 'True'
+    plottime: 'True'
+    plotwaterfall: 'True'
+    rate: '10'
+    showports: 'False'
+    showrf: 'False'
+    type: complex
+    wintype: firdes.WIN_BLACKMAN_hARRIS
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 316.0]
+    rotation: 0
+    state: disabled
+- name: qtgui_sink_x_1
+  id: qtgui_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    bw: 2.5e6
+    comment: ''
+    fc: 89e6
+    fftsize: '1024'
+    gui_hint: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    plotconst: 'True'
+    plotfreq: 'True'
+    plottime: 'True'
+    plotwaterfall: 'True'
+    rate: '10'
+    showports: 'False'
+    showrf: 'False'
+    type: complex
+    wintype: firdes.WIN_BLACKMAN_hARRIS
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [936, 76.0]
+    rotation: 0
+    state: disabled
+- name: rational_resampler_base_xxx_0
+  id: rational_resampler_base_xxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    decim: '1'
+    interp: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    taps: ''
+    type: ccc
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [488, 348.0]
+    rotation: 0
+    state: disabled
+- name: rational_resampler_xxx_0
+  id: rational_resampler_xxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    decim: '6'
+    fbw: ''
+    interp: '25'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    taps: ''
+    type: ccc
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [472, 196.0]
+    rotation: 0
+    state: enabled
+- name: wxgui_fftsink2_0
+  id: wxgui_fftsink2
+  parameters:
+    affinity: ''
+    alias: ''
+    average: 'False'
+    avg_alpha: '0'
+    baseband_freq: 446.09375e6
+    comment: ''
+    fft_rate: '15'
+    fft_size: '1024'
+    freqvar: None
+    grid_pos: ''
+    notebook: ''
+    peak_hold: 'False'
+    ref_level: '0'
+    ref_scale: '2.0'
+    samp_rate: 2e6
+    title: Transmitting data
+    type: complex
+    win: None
+    win_size: ''
+    y_divs: '10'
+    y_per_div: '10'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [888, 236.0]
+    rotation: 0
+    state: disabled
+
+connections:
+- [analog_nbfm_tx_0_0, '0', rational_resampler_base_xxx_0, '0']
+- [analog_nbfm_tx_0_0, '0', rational_resampler_xxx_0, '0']
+- [blocks_wavfile_source_0_0, '0', analog_nbfm_tx_0_0, '0']
+- [rational_resampler_base_xxx_0, '0', limesdr_sink_0, '0']
+- [rational_resampler_base_xxx_0, '0', qtgui_sink_x_0, '0']
+- [rational_resampler_base_xxx_0, '0', qtgui_sink_x_1, '0']
+- [rational_resampler_xxx_0, '0', limesdr_sink_0, '0']
+- [rational_resampler_xxx_0, '0', qtgui_sink_x_0, '0']
+- [rational_resampler_xxx_0, '0', qtgui_sink_x_1, '0']
+- [rational_resampler_xxx_0, '0', wxgui_fftsink2_0, '0']
+
+metadata:
+  file_format: 1
