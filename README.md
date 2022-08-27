@@ -1,0 +1,2 @@
+# limesdrmini
+Projekty dla LimeSDRMini
